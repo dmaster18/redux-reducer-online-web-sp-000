@@ -1,4 +1,4 @@
-export function manageFriends(action, state={friends: []}){
+export function manageFriends(state={friends: [], action}){
   if (action.type === 'ADD_FRIEND') {
     return {...state, friends: [...state.friends, action.friend] }
   } else if (action.type === 'REMOVE_FRIEND') {

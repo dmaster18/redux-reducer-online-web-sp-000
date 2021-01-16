@@ -4,6 +4,8 @@ export function manageFriends(state={friends: []}, action){
   } else if (action.type === 'REMOVE_FRIEND') {
     let friends = state.friends.slice(0, action.id).concat(state.friends.slice(action.id + 1))
     return {...state, friends: friends }
+  } else {
+    return state
   }
 }
 

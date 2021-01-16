@@ -1,9 +1,8 @@
-export function manageFriends(state={friends: [], action}){
-  if (action.type === 'ADD_FRIEND') {
-    return {...state, friends: [...state.friends, action.friend] }
-  } else if (action.type === 'REMOVE_FRIEND') {
-    let friends = state.friends.slice(0, action.id).concat(state.friends.slice(action.id + 1))
-    return {...state, friends: friends }
+export function managePresents(state = {numberOfPresents: 0}, action){
+  if (action.type === 'INCREASE') {
+    return {...state, numberOfPresents: (state.numberOfPresents + 1)};
+  } else {
+    return state;
   }
 }
 

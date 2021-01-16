@@ -1,4 +1,15 @@
 export function manageFriends(action, state={friends: []}){
+  if (action.type === 'ADD_FRIEND') {
+    return {...state, friends: [...state.friends, action.friend] }
+  } else if (action.type === 'REMOVE_FRIEND') {
+    let friends = state.friends.slice(0, action.id).concat(state.friends.slice(action.id + 1))
+    return {...state, friends: friends }
+  }
+}
+
+
+
+/*export function manageFriends(action, state={friends: []}){
   let idx;
   switch(action.type){
     case 'ADD_FRIEND':
@@ -9,4 +20,4 @@ export function manageFriends(action, state={friends: []}){
     case default: 
     
   }
-}
+}*/
